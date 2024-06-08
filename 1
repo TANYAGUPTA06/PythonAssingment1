@@ -1,4 +1,5 @@
 1. Write a program that takes two numbers as input and prints their sum. 
+ans- 
 
 def main():
     try:
@@ -14,13 +15,91 @@ if __name__ == "__main__":
 
 2. Write a python program that checks whether a given number is even or 
 odd. 
+ans- 
+
+def check_even_odd(number):
+    if number % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+try:
+    user_number = int(input("Enter a number: "))
+    result = check_even_odd(user_number)
+    print(f"{user_number} is {result}.")
+except ValueError:
+    print("Invalid input. Please enter an integer.")
+
 3. Write a python program that calculates the factorial of a given number. 
+ans- 
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+try:
+    user_input = int(input("Enter a positive integer: "))
+    if user_input < 0:
+        print("Factorial is not defined for negative numbers.")
+    else:
+        print(f"The factorial of {user_input} is {factorial(user_input)}.")
+except ValueError:
+    print("Invalid input. Please enter a positive integer.")
+
 4. Write a program that asks the user for their name and then prints a 
 greeting message. 
+ans- 
+
+def main():
+    user_name = input("What's your name? ")
+    print(f"Hello, {user_name}! Nice to meet you.")
+
+if __name__ == "__main__":
+    main()
+
 5. Write a program that takes a string input from the user and writes it to a 
 text file. 
+ans-
+
+def main():
+    user_input = input("Enter a string: ")
+    filename = "user_input.txt"
+    with open(filename, "w") as file:
+        file.write(user_input)
+    print(f"String saved to {filename}.")
+
+if __name__ == "__main__":
+    main()
+
 6. Write a program that reads the content of a text file and prints it to the 
 console. 
+ans- 
+21. Write a python program that counts the occurrences of a specific element 
+in a list. 
+22. Write a python program that returns the minimum and maximum values 
+in a list of numbers. 
+23. Write a program that converts temperature from Celsius to Fahrenheit 
+and vice versa based on user input. 
+24. Write a program that acts as a simple calculator. It should take two 
+numbers and an operator (+, -, *, /) as input and print the result. 
+25. Write a program that copies the contents of one text file to another. 
+26. Write a program in python that checks if a string starts with a given prefix 
+or ends with a given suffix. 
+27. Write a program in python that converts a string into a list of its characters.
+21. Write a python program that counts the occurrences of a specific element 
+in a list. 
+22. Write a python program that returns the minimum and maximum values 
+in a list of numbers. 
+23. Write a program that converts temperature from Celsius to Fahrenheit 
+and vice versa based on user input. 
+24. Write a program that acts as a simple calculator. It should take two 
+numbers and an operator (+, -, *, /) as input and print the result. 
+25. Write a program that copies the contents of one text file to another. 
+26. Write a program in python that checks if a string starts with a given prefix 
+or ends with a given suffix. 
+27. Write a program in python that converts a string into a list of its characters.
 7. Write a python program that takes a string as input and returns its length. 
 8. Write a python program that concatenates two strings and returns the 
 result. 
