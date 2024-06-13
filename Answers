@@ -1,0 +1,383 @@
+1. Write a program that takes two numbers as input and prints their sum. 
+ans- 
+
+def main():
+    try:
+        num1 = float(input("Enter the first number: "))
+        num2 = float(input("Enter the second number: "))
+        total = num1 + num2
+        print(f"The sum of {num1} and {num2} is {total:.2f}")
+    except ValueError:
+        print("Invalid input. Please enter valid numeric values.")
+
+if __name__ == "__main__":
+    main()
+
+2. Write a python program that checks whether a given number is even or 
+odd. 
+ans- 
+
+def check_even_odd(number):
+    if number % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+try:
+    user_number = int(input("Enter a number: "))
+    result = check_even_odd(user_number)
+    print(f"{user_number} is {result}.")
+except ValueError:
+    print("Invalid input. Please enter an integer.")
+
+3. Write a python program that calculates the factorial of a given number. 
+ans- 
+
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+try:
+    user_input = int(input("Enter a positive integer: "))
+    if user_input < 0:
+        print("Factorial is not defined for negative numbers.")
+    else:
+        print(f"The factorial of {user_input} is {factorial(user_input)}.")
+except ValueError:
+    print("Invalid input. Please enter a positive integer.")
+
+4. Write a program that asks the user for their name and then prints a 
+greeting message. 
+ans- 
+
+def main():
+    user_name = input("What's your name? ")
+    print(f"Hello, {user_name}! Nice to meet you.")
+
+if __name__ == "__main__":
+    main()
+
+5. Write a program that takes a string input from the user and writes it to a 
+text file. 
+ans-
+
+def main():
+    user_input = input("Enter a string: ")
+    filename = "user_input.txt"
+    with open(filename, "w") as file:
+        file.write(user_input)
+    print(f"String saved to {filename}.")
+
+if __name__ == "__main__":
+    main()
+
+6. Write a program that reads the content of a text file and prints it to the 
+console. 
+ans- 
+my_string = "Hello, world!"
+prefix = "Hello"
+suffix = "world!"
+
+if my_string.startswith(prefix):
+    print(f"'{my_string}' starts with '{prefix}'.")
+else:
+    print(f"'{my_string}' does not start with '{prefix}'.")
+
+if my_string.endswith(suffix):
+    print(f"'{my_string}' ends with '{suffix}'.")
+else:
+    print(f"'{my_string}' does not end with '{suffix}'.")
+
+7. Write a python program that takes a string as input and returns its length. 
+
+def get_string_length(input_string):
+    return len(input_string)
+
+user_input = input("Enter a string: ")
+print(f"Length of the string: {get_string_length(user_input)}")
+
+8. Write a python program that concatenates two strings and returns the 
+result. 
+
+def concatenate_strings(str1, str2):
+    return str1 + str2
+
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+result = concatenate_strings(string1, string2)
+print(f"Concatenated string: {result}")
+
+9. Write a python program that checks if a substring is present in a given 
+string.
+
+def check_substring_presence(main_string, substring):
+    return substring in main_string
+
+main_string = input("Enter the main string: ")
+search_string = input("Enter the substring to search: ")
+if check_substring_presence(main_string, search_string):
+    print(f"'{search_string}' is present in the main string.")
+else:
+    print(f"'{search_string}' is not found in the main string.")
+
+10. Write a python program that converts a given string to uppercase. 
+
+def convert_to_uppercase(input_string):
+    return input_string.upper()
+
+user_input = input("Enter a string: ")
+uppercase_result = convert_to_uppercase(user_input)
+print(f"Uppercase version: {uppercase_result}")
+
+11. Write a python program that generates the first n numbers in the 
+Fibonacci sequence. 
+
+def generate_fibonacci(n):
+    fib_sequence = [0, 1]
+    while len(fib_sequence) < n:
+        next_num = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_num)
+    return fib_sequence
+
+try:
+    n = int(input("Enter the number of Fibonacci numbers to generate: "))
+    if n <= 0:
+        print("Please enter a positive integer.")
+    else:
+        fibonacci_numbers = generate_fibonacci(n)
+        print(f"Fibonacci sequence (first {n} numbers): {fibonacci_numbers}")
+except ValueError:
+    print("Invalid input. Please enter a positive integer.")
+
+12. Write a python program that calculates the sum of the digits of a given 
+number. 
+
+def sum_of_digits(number):
+    total = 0
+    while number > 0:
+        digit = number % 10
+        total += digit
+        number //= 10
+    return total
+
+try:
+    user_number = int(input("Enter a positive integer: "))
+    if user_number < 0:
+        print("Please enter a positive integer.")
+    else:
+        print(f"Sum of digits: {sum_of_digits(user_number)}")
+except ValueError:
+    print("Invalid input. Please enter a positive integer.")
+
+13. Write a program that asks the user for their birth year and calculates their 
+age. 
+
+from datetime import date
+
+def calculate_age(birth_year):
+    today = date.today()
+    age = today.year - birth_year
+    return age
+
+try:
+    birth_year = int(input("Enter your birth year: "))
+    current_age = calculate_age(birth_year)
+    print(f"Your age is {current_age} years.")
+except ValueError:
+    print("Invalid input. Please enter a valid birth year.")
+
+
+
+14. Write a program that reads multiple lines of input from the user until they 
+enter an empty line, then prints all the lines. 
+
+print("Enter multiple lines of text. Press Enter on an empty line to finish.")
+lines = []
+while True:
+    line = input()
+    if not line:
+        break
+    lines.append(line)
+
+print("\nYou entered:")
+for line in lines:
+    print(line)
+
+15. Write a program that reads data from a CSV file and prints it to the 
+console. 
+
+import csv
+
+with open("data.csv", mode="r") as file:
+    csv_reader = csv.reader(file)
+    for row in csv_reader:
+        print(row)
+
+16. Write a program in python that counts the frequency of each character in 
+a string. 
+
+def count_character_frequency(input_string):
+    frequency = {}
+    for char in input_string:
+        frequency[char] = frequency.get(char, 0) + 1
+    return frequency
+
+user_string = input("Enter a string: ")
+char_frequency = count_character_frequency(user_string)
+print("Character frequencies:")
+for char, count in char_frequency.items():
+    print(f"'{char}': {count}")
+
+17. Write a program in python that converts a given string to title case (first 
+letter of each word capitalized). 
+
+def convert_to_title_case(input_string):
+    return input_string.title()
+
+user_input = input("Enter a string: ")
+title_case_result = convert_to_title_case(user_input)
+print(f"Title case: {title_case_result}")
+
+18. Write a python program that checks if two strings are anagrams of each 
+other. 
+
+def are_anagrams(str1, str2):
+    return sorted(str1.lower()) == sorted(str2.lower())
+
+string1 = input("Enter the first string: ")
+string2 = input("Enter the second string: ")
+
+if are_anagrams(string1, string2):
+    print("The strings are anagrams.")
+else:
+    print("The strings are not anagrams.")
+
+19. Write a python program that removes all punctuation from a given string. 
+
+import string
+
+def remove_punctuation(input_string):
+    return input_string.translate(str.maketrans("", "", string.punctuation))
+
+user_input = input("Enter a string: ")
+cleaned_string = remove_punctuation(user_input)
+print(f"String without punctuation: {cleaned_string}")
+
+20. Write a python program that takes a list of numbers and returns their sum. 
+
+def calculate_list_sum(numbers):
+    return sum(numbers)
+
+try:
+    user_input = input("Enter a list of numbers (separated by spaces): ")
+    number_list = [float(num) for num in user_input.split()]
+
+21. Write a python program that counts the occurrences of a specific element 
+in a list. 
+
+def count_occurrences(lst, x):
+    return lst.count(x)
+
+my_list = [8, 6, 8, 10, 8, 20, 10, 8, 8]
+element_to_count = 8
+print(f"{element_to_count} appears {count_occurrences(my_list, element_to_count)} times in the list.")
+
+22. Write a python program that returns the minimum and maximum values 
+in a list of numbers. 
+
+my_numbers = [12, 65, 54, 39, 102, 37, 72, 33, 5, -28, 0, 15]
+min_value = min(my_numbers)
+max_value = max(my_numbers)
+print(f"Minimum value: {min_value}, Maximum value: {max_value}")
+
+23. Write a program that converts temperature from Celsius to Fahrenheit 
+and vice versa based on user input. 
+
+def celsius_to_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+def fahrenheit_to_celsius(fahrenheit):
+    return (fahrenheit - 32) / 1.8
+
+celsius_temp = float(input("Enter temperature in Celsius: "))
+fahrenheit_temp = celsius_to_fahrenheit(celsius_temp)
+print(f"{celsius_temp:.2f} Celsius is equivalent to {fahrenheit_temp:.2f} Fahrenheit.")
+
+fahrenheit_temp_input = float(input("Enter temperature in Fahrenheit: "))
+celsius_temp_output = fahrenheit_to_celsius(fahrenheit_temp_input)
+print(f"{fahrenheit_temp_input:.2f} Fahrenheit is equivalent to {celsius_temp_output:.2f} Celsius.")
+
+24. Write a program that acts as a simple calculator. It should take two 
+numbers and an operator (+, -, *, /) as input and print the result. 
+
+
+def add(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    return x / y
+
+print("Select operation:")
+print("1. Add")
+print("2. Subtract")
+print("3. Multiply")
+print("4. Divide")
+
+choice = input("Enter choice (1/2/3/4): ")
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+if choice == '1':
+    print(f"{num1} + {num2} = {add(num1, num2)}")
+elif choice == '2':
+    print(f"{num1} - {num2} = {subtract(num1, num2)}")
+elif choice == '3':
+    print(f"{num1} * {num2} = {multiply(num1, num2)}")
+elif choice == '4':
+    print(f"{num1} / {num2} = {divide(num1, num2)}")
+else:
+    print("Invalid input. Please select a valid operation.")
+
+25. Write a program that copies the contents of one text file to another. 
+
+import shutil
+
+source_file = "first.txt"
+target_file = "second.txt"
+
+shutil.copyfile(source_file, target_file)
+print(f"Contents of {source_file} copied to {target_file}.")
+
+26. Write a program in python that checks if a string starts with a given prefix 
+or ends with a given suffix. 
+
+my_string = "Hello, world!"
+prefix = "Hello"
+suffix = "world!"
+
+if my_string.startswith(prefix):
+    print(f"'{my_string}' starts with '{prefix}'.")
+else:
+    print(f"'{my_string}' does not start with '{prefix}'.")
+
+if my_string.endswith(suffix):
+    print(f"'{my_string}' ends with '{suffix}'.")
+else:
+    print(f"'{my_string}' does not end with
+
+27. Write a program in python that converts a string into a list of its characters.
+
+def string_to_list(input_string):
+    return list(input_string)
+
+user_input = input("Enter a string: ")
+character_list = string_to_list(user_input)
+print("List of characters:", character_list)
